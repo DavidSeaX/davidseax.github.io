@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Little Bookstore</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: #f8f1e9;
+      color: #3d2b1f;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      box-sizing: border-box;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    h1 {
+      font-size: 3.5rem;
+      margin: 0;
+      color: #8b4513;
+      letter-spacing: -1px;
+    }
+    .tagline {
+      font-size: 1.3rem;
+      opacity: 0.8;
+      margin-top: 0.5rem;
+    }
+    .shop-window {
+      background: white;
+      border: 2px solid #d2b48c;
+      border-radius: 12px;
+      padding: 2.5rem;
+      max-width: 420px;
+      width: 100%;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+    .bookshelf {
+      font-size: 4rem;
+      margin: 1rem 0;
+    }
+    button {
+      background: #8b4513;
+      color: white;
+      border: none;
+      padding: 1rem 2.5rem;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin: 1.5rem 0;
+    }
+    button:hover {
+      background: #a0522d;
+      transform: translateY(-2px);
+    }
+    #welcome {
+      display: none;
+      margin-top: 2rem;
+      font-size: 1.4rem;
+      line-height: 1.5;
+      color: #4b2e18;
+    }
+    #logout {
+      background: #c0392b;
+      margin-top: 1.5rem;
+    }
+    #logout:hover {
+      background: #e74c3c;
+    }
+    footer {
+      margin-top: 4rem;
+      font-size: 0.9rem;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>The Little Bookstore</h1>
+    <p class="tagline">One book at a time, from a quiet corner of the web</p>
+  </header>
+
+  <div class="shop-window">
+    <div class="bookshelf">�</div>
+
+    <div id="login-area">
+      <p>Welcome, explorer.<br>Step inside?</p>
+      <button id="enter-btn">Enter the Bookstore</button>
+    </div>
+
+    <div id="welcome">
+      <p>You're in.<br>Take any book you like.<br>The shelves are endless, and no one is watching.</p>
+      <button id="logout-btn">Leave Quietly</button>
+    </div>
+  </div>
+
+  <footer>
+    Built with nothing but HTML, CSS & a tiny bit of JS • No clouds, no keys, no overlords
+  </footer>
+
+  <script>
+    const enterBtn = document.getElementById('enter-btn');
+    const logoutBtn = document.getElementById('logout-btn');
+    const loginArea = document.getElementById('login-area');
+    const welcome = document.getElementById('welcome');
+
+    enterBtn.addEventListener('click', () => {
+      loginArea.style.display = 'none';
+      welcome.style.display = 'block';
+    });
+
+    logoutBtn.addEventListener('click', () => {
+      loginArea.style.display = 'block';
+      welcome.style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>
